@@ -1,0 +1,455 @@
+@media only screen and (max-width: 959px) {
+    p{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    p{
+        font-size: 14px;
+    }
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+    p{
+        font-size: 14px;
+    }
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    p{
+        font-size: 9px;
+    }
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+    p{
+        font-size: 7px;
+    }
+}
+
+a, a:visited, a:focus, a:active, :visited, :focus, :active, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn.focus:active, .btn.active.focus {
+    outline: 0;
+    color: #192e3b;
+}
+
+a {
+    text-decoration: none;
+    color: #192e3b;
+}
+
+.body {
+    color: #FFF;
+   	background: #F7F7F7;
+    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.471;
+}
+
+.navbar-nav {
+    float: right;
+    margin: 0;
+}
+
+.nav.navbar-nav > li > a{
+	color: #FFFFFF !important;
+}
+
+.nav.navbar-nav > li > a:focus, .nav.navbar-nav > li > a:hover {
+    text-decoration: none;
+    background-color: #C0C0C0CC;
+}
+
+.panel-info > .panel-heading {
+    color: #FFF;
+    background-image: linear-gradient(45deg, #183A4E, #FFFFFF);
+    padding: 5px 15px;
+}
+
+.panel-info {
+    border: none;
+}
+
+.label {
+    display: inline-block;
+    max-width: 100%;
+    font-weight: 700;
+    color: #192e3b;
+}
+
+.header_space{
+	height: 45px;
+    position: relative;
+    opacity: 1;
+}
+
+.header{
+	padding: 0 5px;
+	white-space: nowrap;
+	background-image: linear-gradient(#192e3b, #192e3b);
+	position: fixed;
+	top: 0;
+	min-height: 40px;
+    margin: 0;
+    width: 100%;
+    z-index: 100;
+    align-items: center;
+    display: flex;
+}
+
+.footer_space{
+	height: 20px;
+    position: relative;
+    opacity: 1;	
+}
+
+.footer{
+	font-size: 12px;
+	color: #73879C;
+	padding: 0 5px;
+	white-space: nowrap;
+	background-image: linear-gradient(#192e3b, #192e3b);
+	position: fixed;
+	bottom: 0;
+	min-height: 20px;
+    margin: 0;
+    width: 100%;
+    z-index: 100;
+    align-items: center;
+    display: flex;	
+}
+
+.footer > a{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.main{
+	min-height: 700px;
+    z-index: 0;
+    word-wrap: break-word;
+    width: 100%;
+    padding-right: 10px;
+}
+
+.sistema_titulo > a{
+	color: #FFF;
+	text-decoration: none;
+	left: 0px;
+}
+
+.descricao_login{
+	float: right;
+	width: 100%;
+	text-align: right;	
+	color: #FFF;
+}
+
+.nav-sm .nav.side-menu li a {
+    text-align: center !important;
+    font-weight: 400;
+    font-size: 10px;
+    padding: 10px 5px
+}
+
+.nav-sm .nav.child_menu li.active, .nav-sm .nav.side-menu li.active-sm {
+    border-right: 5px solid #1ABB9C
+}
+
+.nav-sm ul.nav.child_menu ul, .nav-sm .nav.side-menu li.active-sm ul ul {
+    position: static;
+    width: 200px;
+    background: none
+}
+
+.nav-sm>.nav.side-menu>li.active-sm>a {
+    color: #1ABB9C !important
+}
+
+.nav-sm .nav.side-menu li a i.toggle-up {
+    display: none !important
+}
+
+.nav-sm .nav.side-menu li a i {
+    font-size: 25px !important;
+    text-align: center;
+    width: 100% !important;
+    margin-bottom: 5px
+}
+
+.nav-sm ul.nav.child_menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    width: 210px;
+    z-index: 4000;
+    background: #3E5367;
+    display: none
+}
+
+.nav-sm ul.nav.child_menu li {
+    padding: 0 10px
+}
+
+.nav-sm ul.nav.child_menu li a {
+    text-align: left !important
+}
+
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield{
+	border: 1px solid #49728A;
+	height: 24px !important;
+	font-size: 12px !important;
+	
+	
+}
+
+/* BREADCRUMB */
+.myBreadcrumb {
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+	overflow: hidden;
+/* 	border-radius: 5px; */
+}
+
+.myBreadcrumb > * {
+	text-decoration: none;
+	outline: none;
+	display: block;
+	float: left;
+	font-size: 12px;
+	line-height: 30px;
+    color: black;
+	/*need more margin on the left of links to accomodate the numbers*/
+	padding: 0 10px 0 30px;
+	background: white;
+	position: relative;
+    transition: all 0.5s;
+}
+
+.myBreadcrumb > * div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+}
+
+/*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+.myBreadcrumb > *:first-child {
+	padding-left: 10px;
+	/* border-radius: 5px 0 0 5px; */ /*to match with the parent's radius*/
+}
+
+.myBreadcrumb >*:first-child i {
+    vertical-align: sub;
+}
+
+.myBreadcrumb > *:last-child {
+	border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
+	padding-right: 20px;
+    padding-right: 8px;
+}
+
+/*hover/active styles*/
+.myBreadcrumb a.active, .myBreadcrumb a:hover{
+	background: #183A4E;
+	color: #FFF;
+}
+.myBreadcrumb a.active:after, .myBreadcrumb a:hover:after {
+	background: #183A4E;
+}
+
+/*adding the arrows for the myBreadcrumbs using rotated pseudo elements*/
+.myBreadcrumb > *:after {
+	content: '';
+	position: absolute;
+	top: 0; 
+	right: -18px; /*half of square's length*/
+	/*same dimension as the line-height of .myBreadcrumb a */
+	width: 36px; 
+	height: 30px;
+	/*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+	length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+	if diagonal required = 1; length = 1/1.414 = 0.707*/
+	transform: scale(0.707) rotate(45deg);
+    -ms-transform:scale(0.707) rotate(45deg);
+    -webkit-transform:scale(0.707) rotate(45deg);
+    
+	/*we need to prevent the arrows from getting buried under the next link*/
+	z-index: 1;
+	/*background same as links but the gradient will be rotated to compensate with the transform applied*/
+	background: white;
+	/*stylish arrow design using box shadow*/
+	box-shadow: 
+		2px -2px 0 2px rgba(0, 0, 0, 0.4), 
+		3px -3px 0 2px rgba(255, 255, 255, 0.1);
+	/*
+		5px - for rounded arrows and 
+		50px - to prevent hover glitches on the border created using shadows*/
+	border-radius: 0 5px 0 50px;
+    transition: all 0.5s;
+}
+/*we dont need an arrow after the last link*/
+.myBreadcrumb > *:last-child:after {
+	content: none;
+}
+/*we will use the :before element to show numbers*/
+.myBreadcrumb > *:before {
+	/*some styles now*/
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	margin: 8px 0;
+	position: absolute;
+	top: 0;
+	left: 30px;
+    background: white;
+	background: linear-gradient(#444, #222);
+	font-weight: bold;
+    box-shadow: 0 0 0 1px #ccc;
+}
+
+.myBreadcrumb > *:nth-child(n+2) {
+  display:none;
+}
+
+
+@media (max-width: 767px) {
+    .myBreadcrumb > *:nth-last-child(-n+4) {
+        display:block;
+    } 
+    .myBreadcrumb > * div {
+        max-width: 100px;
+    }
+}
+
+@media (min-width: 768px) {
+    .myBreadcrumb > *:nth-last-child(-n+6) {
+        display:block;
+    } 
+    .myBreadcrumb > * div {
+        max-width: 175px;
+    }
+}
+
+.ui-tabs .ui-tabs-nav.ui-widget-header li.ui-state-active a, .ui-tabs .ui-tabs-nav.ui-widget-header li.ui-state-active a {
+    background-color: #FFFFFF;
+/*     border-color: #183A4E #183A4E transparent; */
+    border-style: solid;
+    border-width: 1px;
+    color: #555555;
+    cursor: default;
+}
+
+.ui-tabs .ui-tabs-nav.ui-widget-header {
+    background: transparent none;
+ /*    border-bottom: 1px solid #183A4E; */
+    border-radius: 0;
+}
+
+.ui-tabs .ui-tabs-nav.ui-widget-header li {
+    margin-bottom: -1px;
+    line-height: 18px;
+    background: transparent none;
+	border: 1px solid #183A4E;
+    box-shadow: none;
+    border-radius: 0;
+/*     border-left: 1px solid #183A4E;
+    border-top: 1px solid #183A4E;
+    border-right: 1px solid #183A4E; */
+}
+
+.ui-g div {
+	background-color: #ececed;
+	text-align: left;
+	border: 1px solid #f0f0fc;
+}
+
+.input-group .form-control:last-child, .input-group .form-control,
+	.input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not
+	(:first-child ) >.btn, .input-group-btn:first-child>.btn:not (:first-child
+	), .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn,
+	.input-group-btn:last-child>.dropdown-toggle {
+	height: 26px;
+	}
+
+.input-group[class*="col-"] {
+	float: left;
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 10px;
+	border-radius: 4px;
+	height: 26px; . ui-autocomplete-input { width : 100%;
+	border: 1px solid #49728A;
+}
+
+.glyphicon {
+	height: 26px;
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: white;
+}
+
+.fieldset .input-group[class*="col-"] {
+	float: left;
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 10px;
+	border-radius: 4px;
+	height: 26px; . ui-autocomplete-input { width : 100%;
+	border: 1px solid #49728A;
+}
+.fieldset .form-group[class*="col-"] {
+	float: left;
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 10px;
+	border-radius: 4px;
+	height: 26px; . ui-autocomplete-input { width : 100%;
+	border: 1px solid #49728A;
+}
+
+.fieldset .glyphicon {
+	height: 26px;
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: white;
+}
+
+.ui-selectonemenu .ui-widget .ui-state-default .ui-corner-all {
+    width: 312px;
+    height: 28px;
+    border: 1px solid;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+}
+    
+.ui-selectonemenu .ui-selectonemenu-label {
+    display: block;
+    border: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: normal;
+    width: 100%;
+    text-align: left;
+    border: 1px solid;
+    height: 26px;
+    border-right: 0px;
+    border-bottom: 1px solid;
+}

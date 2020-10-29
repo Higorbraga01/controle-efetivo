@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type"
+		content="application/xhtml+xml; charset=utf-8" />
+</h:head>
+
+<ui:composition template="/template/template.xhtml">
+	<ui:define name="conteudo">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<p:ajaxStatus>
+						<f:facet name="default">
+							<span class="fa fa-user fa-2x" />
+							<span class="titulo_form"> Listagem do Efetivo</span>
+						</f:facet>
+						<f:facet name="start">
+							<div style="float: none; position: absolute;">
+								<span class="titulo_form"> Carregando...</span>
+							</div>
+							<div>
+								<marquee direction="right" scrollamount="35">
+								 <span class="fa fa-user fa-2x" /></marquee>
+							</div>
+						</f:facet>
+						<f:facet name="complete">
+							<span class="fa fa-user fa-2x" />
+							<span class="titulo_form"> Listagem do Efetivo </span>
+						</f:facet>
+					</p:ajaxStatus>
+				</div>
+				<div class="panel-body">
+					<h:form id="formCadastroPessoa">
+						<div class="row">
+							<div style="width: 200; float: left;">
+								<div class="col-md-3">
+									<h:outputLabel value="Buscar por Nome" />
+									<br />
+									<div class="input-group">
+										<h:inputText styleClass="form-control" id="txtBuscar"
+											size="100" value="#{pessoaBean.nomeBusca}">
+											<p:ajax listener="#{pessoaBean.buscarPessoas()}"
+												update="formCadastroPessoa" event="blur" />
+										</h:inputText>
+										<span class="input-group-btn"> <p:commandLink>
+												<button class="btn btn-primary"
+													style="font-size: 13px; border-radius: 0px;"
+													title="Buscar Nome">
+													<i class="fa fa-search"></i>
+												</button>
+											</p:commandLink>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div style="width: 200; float: right;">
+								<p:commandLink id="atualizar" value="Atualizar"
+									title="Recarregar lista" styleClass="btn btn-primary"
+									action="#{pessoaBean.recarregarDados()}"
+									update="formCadastroPessoa">
+								</p:commandLink>
+							</div>
+						</div>
+						<p:dataTable id="tblPessoas" var="pessoa" resizableColumns="false"
+							value="#{pessoaBean.pessoas}"
+							paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+							paginator="true" rows="12" style="margin-bottom:20px">
+
+							<f:facet name="{Exporters}">
+								<div style="float: right; padding-top: 5px;">
+									<h:commandLink>
+										<img
+											src="${facesContext.externalContext.requestContextPath}/faces/imagem/excel.png"
+											width="24" />
+										<p:dataExporter type="xls" target="tblPessoas"
+											fileName="Lista_Efetivo" />
+									</h:commandLink>
+									<h:commandLink>
+										<img
+											src="${facesContext.externalContext.requestContextPath}/faces/imagem/pdf.png"
+											width="24" />
+										<p:dataExporter preProcessor="#{pessoaBean.preProcessPDF}"
+											type="pdf" target="tblPessoas" fileName="Lista_Efetivo" />
+									</h:commandLink>
+								</div>
+							</f:facet>
+							<p:column width="120" exportable="false">
+								<f:facet name="header">
+									<h:outputText styleClass="fa fa-cog" />
+								</f:facet>
+
+								<div class="col-md-5">
+									<p:commandLink action="detalhesPessoa"
+										styleClass="fa fa-search fa-lg" style="font-size:18px"
+										id="cl1" title="Consultar Dados Gerais">
+										<f:param name="idPessoa" value="#{pessoa.cdPessoa}" />
+									</p:commandLink>
+									</div>
+									<div class="col-md-5">
+										<p:commandLink id="excluirPessoa" title="Excluir Pessoa"
+											actionListener="#{pessoaBean.removerPessoa(pessoa)}"
+											update="formCadastroPessoa">
+											<button class="btn btn-primary">
+												<i class="fa fa-trash-o"></i>
+											</button>
+										</p:commandLink>
+									</div>
+							</p:column>
+							<p:column headerText="Posto/Qd/Espec">
+								<h:outputText
+									value="#{pessoa.graduacao} #{pessoa.quadro} #{pessoa.especialidade} #{pessoa.stReserva}" />
+							</p:column>
+							<p:column headerText="Nome">
+								<h:outputText value="#{pessoa.nmPessoa}" />
+							</p:column>
+							<p:column headerText="Dt Apresentação OM">
+								<h:outputText value="#{pessoa.dtApresentacao}">
+									<f:convertDateTime pattern="dd/MM/yyy" />
+								</h:outputText>
+							</p:column>
+							<p:column headerText="Dt Praça">
+								<h:outputText value="#{pessoa.dtPraca}">
+									<f:convertDateTime pattern="dd/MM/yyy" />
+								</h:outputText>
+							</p:column>
+							<p:column headerText="Dt Ult. Promoção">
+								<h:outputText value="#{pessoa.dtUltPromo}">
+									<f:convertDateTime pattern="dd/MM/yyy" />
+								</h:outputText>
+							</p:column>
+							<p:column headerText="Dt. Nascimento">
+								<h:outputText value="#{pessoa.dtNascimento}">
+									<f:convertDateTime pattern="dd/MM/yyy" />
+								</h:outputText>
+							</p:column>
+							<p:column headerText="Nº Identidade">
+								<h:outputText value="#{pessoa.nrIdentidade}" />
+							</p:column>
+							<p:column headerText="Nº CPF">
+								<h:outputText value="#{pessoa.nrCpf}" />
+							</p:column>
+							<p:column headerText="Nº SARAM">
+								<h:outputText value="#{pessoa.nrSaram}" />
+							</p:column>
+							<p:column headerText="Cargo / Função">
+								<h:outputText value="#{pessoa.cargoSetor}" />
+							</p:column>
+							<p:column headerText="Setor">
+								<h:outputText value="#{pessoa.nmSetor}" />
+							</p:column>
+							<p:column headerText="Divisão">
+								<h:outputText value="#{pessoa.nmDivisao}" />
+							</p:column>
+						</p:dataTable>
+						<!-- MODAL EDICAO PESSOA -->
+						<p:dialog id="modalEdicaoPessoa" header="Edição Pessoa"
+							widgetVar="modalEdicaoPessoa" modal="true" height="400"
+							width="300">
+							<div>
+								<div class="row">
+									<h:outputLabel value="ID" />
+									<br />
+									<p:inputText value="#{pessoaBean.pessoa.cdPessoa}"
+										disabled="true" />
+								</div>
+								<br />
+								<div class="row">
+									<h:outputLabel value="Nome" />
+									<br />
+									<p:inputText value="#{pessoaBean.pessoa.nmPessoa}" />
+								</div>
+								<br />
+								<div class="row">
+									<h:outputLabel value="Nascimento" />
+									<br />
+									<p:calendar pattern="dd/MM/yyyy"
+										value="#{pessoaBean.pessoa.dtNascimento}" />
+								</div>
+								<br />
+								<div class="row">
+									<h:outputLabel value="Identidade" />
+									<br />
+									<p:inputText value="#{pessoaBean.pessoa.nrIdentidade}" />
+								</div>
+								<br />
+								<div class="row">
+									<h:outputLabel value="CPF" />
+									<br />
+									<p:inputText value="#{pessoaBean.pessoa.nrCpf}" />
+								</div>
+
+							</div>
+							<div class="modal-footer">
+								<h:commandLink id="salvar"
+									action="{pessoaBean.salvarAlteracaoPessoa()}">
+									<button type="button" class="btn btn-success">
+										<i class="fa fa-floppy-o"></i> Salvar
+									</button>
+								</h:commandLink>
+								<h:commandLink id="fechar"
+									onclick="PF('modalEdicaoPessoa').hide()">
+									<button type="button" class="btn btn-default">
+										<i class="fa fa-times"></i> Fechar
+									</button>
+								</h:commandLink>
+							</div>
+						</p:dialog>
+
+						<!-- MODAL REMOCAO PESSOA -->
+						<p:dialog id="modalRemocaoPessoa" header="Remoção Pessoa"
+							widgetVar="modalRemocaoPessoa" modal="true" height="200"
+							width="300">
+							<div>
+								<div class="row">
+									<h:outputLabel value="ID" />
+									<br />
+									<p:inputText value="#{pessoaBean.pessoaRemocao.cdPessoa}"
+										disabled="true" />
+								</div>
+								<br />
+								<div class="row">
+									<h:outputLabel value="Nome" />
+									<br />
+									<p:inputText value="#{pessoaBean.pessoaRemocao.nmPessoa}"
+										disabled="true" />
+								</div>
+								<br />
+							</div>
+							<div class="modal-footer">
+								<h:commandLink id="Remover"
+									action="#{pessoaBean.efetuarRemocaoPessoa()}">
+									<button type="button" class="btn btn-danger">
+										<i class="fa fa-times"></i> Remover
+									</button>
+								</h:commandLink>
+								<h:commandLink id="Fechar"
+									onclick="PF('modalRemocaoPessoa').hide()">
+									<button type="button" data-dismiss="modal"
+										class="btn btn-default">
+										<i class="fa fa-times"></i> Fechar
+									</button>
+								</h:commandLink>
+							</div>
+						</p:dialog>
+
+
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

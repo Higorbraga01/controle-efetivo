@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition>
+    <div class="menu_section">
+        <ul class="nav side-menu">
+            <li><a href="${facesContext.externalContext.requestContextPath}/faces/index.xhtml"><i class="fa fa-home"></i>Home</a></li>
+            <li><a><i class="fa fa-line-chart"></i> Planejamento Centralizado <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a><i class="fa fa-wrench"></i> Cadastros Básicos <span class="fa fa-chevron-down"></span></a>
+                        <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-fighter-jet"></i>Material no Projeto</a></li>
+                        <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_item.xhtml"> <i class="fa fa-cog"> </i>Organizações </a></li>
+                        <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_item_apoio.xhtml"> <i class="fa fa-cogs"> </i>Famílias de Material </a></li>
+                        <li><a href="${facesContext.externalContext.requestContextPath}/faces/solic_inclusao_pnsn.xhtml"> <i class="fa fa-wpforms"> </i>Localidades </a></li>
+                        <li><a href="${facesContext.externalContext.requestContextPath}/faces/localizacao_sn.xhtml"> <i class="fa fa-search"> </i>Preços </a></li>
+                    </li>
+                    <li><a><i class="fa fa-area-chart"></i> Utilização <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/gerenciar_utilizacao.xhtml"><i class="fa fa-list-alt"></i>Gerenciar Utilização</a></li>
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/consultar_utilizacao.xhtml"><i class="fa fa-file-text-o"></i>Consultas de Utilização</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-line-chart"></i> Previsão de Esforço <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/distribuir_esforco.xhtml"><i class="fa fa-balance-scale"></i>Distribuição de Esforço</a></li>
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-file-text-o"></i>Relatório de Previsão de Esforço</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa fa-calendar"></i> Vencimento <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-bar-chart"></i>Projeção de Vencimentos</a></li>
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-search"></i>Consulta de Vencimentos de Equipamentos</a></li>
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-file-text-o"></i>Relatórios de Vencimentos</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-refresh"></i> Movimentação <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-list-alt"></i>Gerenciamento de Movimentação</a></li>
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-paper-plane-o"></i>Envio Movimentação de LHA</a></li>
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-get-pocket "></i>Recebimento Movimentação de LHA</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-thumbs-o-up"></i> Disponibilidade <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-pencil-square-o"></i>Cadastro de Disponibilidade</a></li>
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-file-code-o"></i>Relatórios Operacionais</a></li>
+                            <li><a href="${facesContext.externalContext.requestContextPath}/faces/lista_aeronave.xhtml"><i class="fa fa-file-text-o"></i>Relatórios de Disponibilidade</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+</ui:composition>
+</html>

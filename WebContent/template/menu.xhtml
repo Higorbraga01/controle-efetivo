@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+     
+    <ui:composition>
+        <div class="menu_section">
+            <ul class="nav side-menu">
+              <li><a href="${facesContext.externalContext.requestContextPath}/faces/index.xhtml"><i class="fa fa-home"></i>Home</a></li>
+        
+              <!-- INICIO MENU siloms-mht -->
+              <li><a><i class="fa fa-line-chart"></i>Administração<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <li>
+                  	<a><i class="fa fa-wrench"></i> Controle <span class="fa fa-chevron-down"></span></a>
+                  	<ul class="nav child_menu">
+                  	<li><a href="${facesContext.externalContext.requestContextPath}/faces/new_pessoa.xhtml"><i class="fa fa-user"></i>Cadastro</a> </li>
+                  		<li><a href="${facesContext.externalContext.requestContextPath}/faces/pessoas.xhtml"><i class="fa fa-fw fa-book"></i>Lista do Efetivo</a> </li>
+                  		
+                  	</ul>
+                  </li>
+                </ul>
+              </li>
+             <!-- FIM MENU siloms-mht -->  
+             </ul>
+        </div>
+    </ui:composition>
+</html>

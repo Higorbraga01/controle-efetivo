@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Sistema Controle Efetivo - LOGIN </title>         
+       
+    </h:head>
+    <h:body>
+        <p:dialog visible="true" width="500" height="300" header="Acessar o Sistema" showHeader="false" modal="true" resizable="false">            
+            <h:panelGrid style="margin: 0 auto;"><h:outputText styleClass="fa fa-lock fa-5x"/></h:panelGrid>
+            <h:form id="formLogin">
+                <h:panelGrid cellspacing="10">
+                    Digite seu usuário e senha para ter acesso ao sistema:                    
+                    <p:messages id="messagesLogin"/>
+                    <p:inputText placeholder="Usuário" value="#{LoginMB.usuario.nomeUsuario}" size="40" required="true" requiredMessage="Campo Login é obrigatório"/>
+                    <p:password placeholder="Senha" value="#{LoginMB.usuario.senha}" size="40" required="true" requiredMessage="Campo Senha é obrigatório"/>
+                    <p:commandButton value="Log In" action="#{LoginMB.envia()}" update="messagesLogin"/>
+                </h:panelGrid>
+            </h:form>
+        </p:dialog>
+    </h:body>
+</html>

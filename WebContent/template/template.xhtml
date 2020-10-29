@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><ui:insert name="title">
+                    Sistema de Controle de Efetivo - SPM
+                </ui:insert></title>
+    <link href="${facesContext.externalContext.requestContextPath}/faces/css/bootstrap.min.css" rel="stylesheet"
+        id="os1" />
+    <link href="${facesContext.externalContext.requestContextPath}/faces/css/font-awesome.min.css" rel="stylesheet"
+        id="os2" />
+    <link href="${facesContext.externalContext.requestContextPath}/faces/css/custom.min.css" rel="stylesheet" id="os3" />
+    <link href="${facesContext.externalContext.requestContextPath}/faces/css/customizado.css" rel="stylesheet" id="os4" />
+
+    <script type="text/javascript" src="${facesContext.externalContext.requestContextPath}/faces/js/commons.js"></script>
+</h:head>
+<body>
+    <div class="header_space">
+        <h:form>
+            <div class="header">
+                <div class="sistema_titulo" id="sistema_titulo">
+                    <a href="#" onclick="javascript:ocultarExibirMenu(false)" title="Menu do Sistema"> <img
+                        src="${facesContext.externalContext.requestContextPath}/faces/imagem/bar/home.png"
+                        width="40px" height="40px" /> SPM - Controle &nbsp; <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                <div class="descricao_login"
+                    style="float: right; width: 100%; color: #FFF; text-align: right; word-wrap: break-word;">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" title="CCA-RJ"> <span class="fa fa-user"></span> <span
+                                class="username"> <h:outputText value="Administrador" />
+                            </span>
+                        </a></li>
+                        <!-- SELECAO DE UNIDADES -->
+                        <li><a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                            aria-expanded="false" title="Lista de unidades onde estou alocado"> <span
+                                class="username"> <h:outputText
+                                        value="CCA-RJ" id="txtUnidadeSelecionada" />
+                                    <span class=" fa fa-angle-down"></span>
+                            </span>
+                        </a>
+                        </li>
+
+                        <!-- SELECAO DE AREAS DE ATUACAO -->
+                        <li><a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                            aria-expanded="false" title="Lista de áreas de atuação"> <span class="username">
+                                    <h:outputText value="Aeronáutica"
+                                        id="txtAreaAtuacaoSelecionada" /> <span class=" fa fa-angle-down"></span>
+                            </span>
+                        </a>
+                        </li>
+                        <li><h:commandLink>
+                                <i class="fa fa-power-off" style="color: red;" title="Sair do Sistema"></i>
+                            </h:commandLink></li>
+                    </ul>
+                </div>
+            </div>
+        </h:form>
+    </div>
+    <div class="main">
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu"
+            style="display: none; position: absolute; z-index: 9999; width: 250px;">
+            <ui:include src="/template/menu.xhtml" />
+        </div>
+        <div>
+            <p:growl id="growl-warn" severity="warn" showDetail="true" sticky="true" autoUpdate="true"></p:growl>
+            <p:growl id="growl-success" severity="info" showDetail="true" sticky="true" autoUpdate="true"></p:growl>
+            <p:growl id="growl-error" severity="error, fatal" showDetail="true" sticky="true" autoUpdate="true"></p:growl>
+        </div>
+
+        <div id="corpoPaginaSiloms" onclick="javascript:ocultarExibirMenu(true)">
+            <br />
+            <div id="conteudoPaginaSiloms">
+                <ui:insert name="conteudo" />
+            </div>
+        </div>
+    </div>
+    <div class="footer_space">
+        <div class="footer">
+            <ui:include src="/template/footer.xhtml" />
+        </div>
+    </div>
+    <script type="text/javascript" src="${facesContext.externalContext.requestContextPath}/faces/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${facesContext.externalContext.requestContextPath}/faces/js/custom.min.js"></script>
+    <script type="text/javascript" src="${facesContext.externalContext.requestContextPath}/faces/js/locale.js"></script>
+</body>
+    </html>
+</f:view>

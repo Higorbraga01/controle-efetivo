@@ -1,0 +1,431 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type"
+		content="application/xhtml+xml; charset=utf-8" />
+</h:head>
+
+<ui:composition template="/template/template.xhtml">
+	<ui:define name="conteudo">
+		<style type="text/css">
+</style>
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<span class="fa fa-user fa-2x" /><span class="titulo_form">
+						Cadastrar Pessoa</span>
+				</div>
+				<div class="ui-fluid">
+					<h:form id="formNovaPessoa">
+						<p:tabView effect="fade" orientation="top">
+							<br />
+							<p:tab title="Informações Gerais">
+								<div class="ui-g">
+									<div class="ui-g-2">
+										<h:outputLabel value="Posto/Graduação" />
+										<br />
+										<p:selectOneMenu id="sgPosto"
+											value="#{cadPessoaMB.pessoa.graduacao}" style="width:100%">
+											<f:selectItem itemLabel="Selecione" itemDisabled="true" />
+											<f:selectItem itemLabel="Tenente Brigadeiro"
+												itemValue="TBRIG" />
+											<f:selectItem itemLabel="Major Brigadeiro" itemValue="MBRIG" />
+											<f:selectItem itemLabel="Brigadeiro" itemValue="BRIG" />
+											<f:selectItem itemLabel="Cel" itemValue="CEL" />
+											<f:selectItem itemLabel="Tenente Cel" itemValue="TCEL" />
+											<f:selectItem itemLabel="Major" itemValue="MAJ" />
+											<f:selectItem itemLabel="Capitão" itemValue="CAP" />
+											<f:selectItem itemLabel="1º Tenenente" itemValue="1T" />
+											<f:selectItem itemLabel="2º" itemValue="2T" />
+											<f:selectItem itemLabel="Sub Oficial" itemValue="SO" />
+											<f:selectItem itemLabel="1º Sargento" itemValue="1S" />
+											<f:selectItem itemLabel="2º Sargento" itemValue="2S" />
+											<f:selectItem itemLabel="3º Sargento" itemValue="3S" />
+											<f:selectItem itemLabel="Cabo" itemValue="CB" />
+											<f:selectItem itemLabel="Taifeiro Mor" itemValue="TMOR" />
+											<f:selectItem itemLabel="Soldado de 1º Classe" itemValue="S1" />
+											<f:selectItem itemLabel="Taifeiro de 1ª Classe"
+												itemValue="T1" />
+											<f:selectItem itemLabel="Soldado de 2º Classe" itemValue="S2" />
+											<f:selectItem itemLabel="Servidor Civil" itemValue="CV" />
+										</p:selectOneMenu>
+									</div>
+
+									<div class="ui-g-2">
+										<h:outputLabel value="Quadro" />
+										<br />
+										<p:selectOneMenu id="sgQuadro"
+											value="#{cadPessoaMB.pessoa.quadro}" style="width:100%">
+											<f:selectItem itemLabel="Selecione" itemDisabled="true" />
+											<f:selectItem itemLabel="QOAV" itemValue="QOAV" />
+											<f:selectItem itemLabel="QOINT" itemValue="QOINT" />
+											<f:selectItem itemLabel="QOINF" itemValue="QOINF" />
+											<f:selectItem itemLabel="QOENG" itemValue="QOENG" />
+											<f:selectItem itemLabel="QCOA" itemValue="QCOA" />
+											<f:selectItem itemLabel="QOMED" itemValue="QOMED" />
+											<f:selectItem itemLabel="QOCON" itemValue="QOCON" />
+											<f:selectItem itemLabel="QOEA" itemValue="QOEA" />
+											<f:selectItem itemLabel="QOAP" itemValue="QOAP" />
+											<f:selectItem itemLabel="QSS" itemValue="QSS" />
+											<f:selectItem itemLabel="QESA" itemValue="QESA" />
+											<f:selectItem itemLabel="QCB" itemValue="QCB" />
+											<f:selectItem itemLabel="QSD" itemValue="QSD" />
+											<f:selectItem itemLabel="CIVIL" itemValue="CV" />
+										</p:selectOneMenu>
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Especialidade" />
+										<br />
+										<p:selectOneMenu id="sgEspecialidade"
+											value="#{cadPessoaMB.pessoa.especialidade}"
+											style="width:100%">
+											<f:selectItem itemLabel="Selecione" itemDisabled="true" />
+											<f:selectItem itemLabel="ANS" itemValue="ANS" />
+											<f:selectItem itemLabel="PGR" itemValue="PGR" />
+											<f:selectItem itemLabel="CMP" itemValue="CMP" />
+											<f:selectItem itemLabel="EST" itemValue="EST" />
+											<f:selectItem itemLabel="ADM" itemValue="ADM" />
+											<f:selectItem itemLabel="FOT" itemValue="FOT" />
+											<f:selectItem itemLabel="SVA" itemValue="SVA" />
+											<f:selectItem itemLabel="SVI" itemValue="SVI" />
+											<f:selectItem itemLabel="SVE" itemValue="SVE" />
+											<f:selectItem itemLabel="BMA" itemValue="BMA" />
+											<f:selectItem itemLabel="BMB" itemValue="BMB" />
+											<f:selectItem itemLabel="BCO" itemValue="BCO" />
+											<f:selectItem itemLabel="BEI" itemValue="BEI" />
+											<f:selectItem itemLabel="BET" itemValue="BET" />
+											<f:selectItem itemLabel="BCT" itemValue="BCT" />
+											<f:selectItem itemLabel="BFT" itemValue="BFT" />
+											<f:selectItem itemLabel="SGS" itemValue="SGS" />
+											<f:selectItem itemLabel="SBO" itemValue="SBO" />
+											<f:selectItem itemLabel="BMT" itemValue="BMT" />
+											<f:selectItem itemLabel="SMU" itemValue="SMU" />
+											<f:selectItem itemLabel="SAD" itemValue="SAD" />
+											<f:selectItem itemLabel="SAI" itemValue="SAI" />
+											<f:selectItem itemLabel="SIN" itemValue="SIN" />
+											<f:selectItem itemLabel="SCF" itemValue="SCF" />
+											<f:selectItem itemLabel="SDE" itemValue="SDE" />
+											<f:selectItem itemLabel="SEL" itemValue="SEL" />
+											<f:selectItem itemLabel="SOB" itemValue="SOB" />
+											<f:selectItem itemLabel="SPV" itemValue="SPV" />
+											<f:selectItem itemLabel="STP" itemValue="STP" />
+											<f:selectItem itemLabel="SEF" itemValue="SEF" />
+											<f:selectItem itemLabel="SLB" itemValue="SLB" />
+											<f:selectItem itemLabel="SRD" itemValue="SRD" />
+											<f:selectItem itemLabel="STO" itemValue="STO" />
+											<f:selectItem itemLabel="BEP" itemValue="BEP" />
+											<f:selectItem itemLabel="BEV" itemValue="BEV" />
+											<f:selectItem itemLabel="SEM" itemValue="SEM" />
+											<f:selectItem itemLabel="SML" itemValue="SML" />
+											<f:selectItem itemLabel="BSP" itemValue="BSP" />
+											<f:selectItem itemLabel="TIN" itemValue="TIN" />
+											<f:selectItem itemLabel="TAD" itemValue="TAD" />
+											<f:selectItem itemLabel="BLM" itemValue="BLM" />
+											<f:selectItem itemLabel="SNE" itemValue="SNE" />
+										</p:selectOneMenu>
+									</div>
+
+									<div class="ui-g-2">
+										<p:outputLabel value="Nº Antiguidade" />
+										<br />
+										<p:spinner id="number"
+											value="#{cadPessoaMB.pessoa.nrAntiguidade}" style="width:60%" />
+
+									</div>
+									<div class="ui-g-2">
+										<h:panelGrid columns="2">
+											<p:outputLabel value="Reserva ?" />
+											<br />
+											<p:selectOneRadio id="stMilitar"
+												value="#{cadPessoaMB.pessoa.stReserva}">
+												<f:selectItem itemLabel="SIM" itemValue="R1" />
+												<f:selectItem itemLabel="NÃO" itemValue="" />
+											</p:selectOneRadio>
+										</h:panelGrid>
+									</div>
+								</div>
+								<div class="ui-g">
+									<div class="ui-g-2">
+										<h:outputLabel value="Nome Completo" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.nmPessoa}" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Nome Guerra" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.nmGuerra}" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Dt de Nascimento" />
+										<br />
+										<p:calendar pattern="dd/MM/yyyy"
+											value="#{cadPessoaMB.pessoa.dtNascimento}" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Cargo / Função" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.cargoSetor}"
+											size="15" />
+									</div>
+								</div>
+
+								<div class="ui-g">
+									<div class="ui-g-2">
+										<h:outputLabel value="Dt Apresentação" />
+										<br />
+										<p:calendar pattern="dd/MM/yyyy"
+											value="#{cadPessoaMB.pessoa.dtApresentacao}" />
+									</div>
+
+									<div class="ui-g-2">
+										<h:outputLabel value="Dt de Praça" />
+										<br />
+										<p:calendar pattern="dd/MM/yyyy"
+											value="#{cadPessoaMB.pessoa.dtPraca}" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Dt Ult. Promoção" />
+										<br />
+										<p:calendar pattern="dd/MM/yyyy"
+											value="#{cadPessoaMB.pessoa.dtUltPromo}" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Telefone" />
+										<br />
+										<p:inputMask id="phone"
+											value="#{cadPessoaMB.pessoa.nrTelefone}"
+											mask="(99) 99999-9999" />
+									</div>
+								</div>
+
+								<div class="ui-g">
+									<div class="ui-g-2">
+										<h:outputLabel value="Identidade" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.nrIdentidade}"/>
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="CPF" />
+										<br />
+										<p:inputMask id="cpf" value="#{cadPessoaMB.pessoa.nrCpf}"
+											mask="999.999.999-99 " />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="SARAM" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.nrSaram}" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="SETOR" />
+										<br />
+										<p:selectOneMenu id="sgSetor"
+											value="#{cadPessoaMB.pessoa.nmSetor}" style="width:100%">
+											<f:selectItem itemLabel="Selecione" itemDisabled="true" />
+											<f:selectItem itemLabel="ASIS" itemValue="ASIS" />
+											<f:selectItem itemLabel="AGTI" itemValue="AGTI" />
+											<f:selectItem itemLabel="ACI" itemValue="ACI" />
+											<f:selectItem itemLabel="SINT" itemValue="SINT" />
+											<f:selectItem itemLabel="SCS" itemValue="SCS" />
+											<f:selectItem itemLabel="SSD" itemValue="SSD" />
+											<f:selectItem itemLabel="SEC-CH" itemValue="SEC CH" />
+											<f:selectItem itemLabel="ACP" itemValue="ACP" />
+											<f:selectItem itemLabel="SEC-DA" itemValue="SEC DA" />
+											<f:selectItem itemLabel="SPA" itemValue="SPA" />
+											<f:selectItem itemLabel="SSG" itemValue="SSG" />
+											<f:selectItem itemLabel="STS" itemValue="STS" />
+											<f:selectItem itemLabel="SCI" itemValue="STL" />
+											<f:selectItem itemLabel="SCT" itemValue="SCT" />
+											<f:selectItem itemLabel="SMA" itemValue="SMA" />
+											<f:selectItem itemLabel="SRE" itemValue="SRE" />
+											<f:selectItem itemLabel="SPE" itemValue="SPE" />
+											<f:selectItem itemLabel="SBO" itemValue="SBO" />
+											<f:selectItem itemLabel="SIJ" itemValue="SIJ" />
+											<f:selectItem itemLabel="SEF" itemValue="SEF" />
+											<f:selectItem itemLabel="SIAT" itemValue="SIAT" />
+											<f:selectItem itemLabel="SEC-DT" itemValue="SEC DT" />
+											<f:selectItem itemLabel="SSP" itemValue="SSP" />
+											<f:selectItem itemLabel="SAT" itemValue="SAT" />
+											<f:selectItem itemLabel="SPS" itemValue="SPS" />
+											<f:selectItem itemLabel="SIS" itemValue="SIS" />
+											<f:selectItem itemLabel="SAP" itemValue="SAP" />
+											<f:selectItem itemLabel="SSAN" itemValue="SSAN" />
+											<f:selectItem itemLabel="SSAI" itemValue="SSAI" />
+											<f:selectItem itemLabel="SSTE" itemValue="SSTE" />
+											<f:selectItem itemLabel="SSAD" itemValue="SSAD" />
+											<f:selectItem itemLabel="SGP" itemValue="SGP" />
+											<f:selectItem itemLabel="SSPC" itemValue="SSPC" />
+											<f:selectItem itemLabel="SSCM" itemValue="SSCM" />
+											<f:selectItem itemLabel="SSDO" itemValue="SSDO" />
+											<f:selectItem itemLabel="SGR" itemValue="SGR" />
+											<f:selectItem itemLabel="SCE" itemValue="SCE" />
+											<f:selectItem itemLabel="SBD" itemValue="SBD" />
+											<f:selectItem itemLabel="SIA" itemValue="SIA" />
+											<f:selectItem itemLabel="SAU" itemValue="SAU" />
+										</p:selectOneMenu>
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="DIVISAO" />
+										<br />
+										<p:selectOneMenu id="sgDivisao"
+											value="#{cadPessoaMB.pessoa.nmDivisao}" style="width:100%">
+											<f:selectItem itemLabel="Selecione" itemDisabled="true" />
+											<f:selectItem itemLabel="Chefia" itemValue="CHEFIA" />
+											<f:selectItem itemLabel="Divisão Administrativa" itemValue="DA" />
+											<f:selectItem itemLabel="Divisão Técnica" itemValue="DT" />
+											<f:selectItem itemLabel="Divisão de Sistemas" itemValue="DS" />
+										</p:selectOneMenu>
+									</div>
+								</div>
+								<div class="ui-g">
+									<div class="ui-g-6">
+										<h:outputLabel value="Endereço completo" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.nmEndereco}"
+											size="105" />
+									</div>
+								</div>
+							</p:tab>
+							<p:tab title="Outras Informações">
+								<div class="ui-g">
+									<div class="ui-g-2">
+										<h:outputLabel value="Nº Titulo" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.nrTitulo}" size="5" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Nº Zona" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.nrTituloZona}"
+											size="15" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Nº Seção" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.nrTituloSecao}"
+											size="15" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Estado" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.nrTituloEstado}"
+											size="15" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Município" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.nrTituloMunicipio}"
+											size="15" />
+									</div>
+								</div>
+								<div class="ui-g">
+									<div class="ui-g-2">
+										<h:outputLabel value="Tipo RH" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.tpRh}" size="20" />
+									</div>
+									<div class="ui-g-12 ui-md-6 ui-lg-2">
+										<h:outputLabel value="Escolaridade" />
+										<br />
+										<p:selectOneMenu id="escolaridade"
+											value="#{cadPessoaMB.pessoa.escolaridade}" style="width:100%">
+											<f:selectItem itemLabel="Selecione" itemDisabled="true" />
+											<f:selectItem itemLabel="Ensino Fundamental"
+												itemValue="ENSINO FUNDAMENTAL" />
+											<f:selectItem itemLabel="Ensino Médio Incompleto"
+												itemValue="ENSINO MEDIO INCOMPLETO" />
+											<f:selectItem itemLabel="Ensino Médio"
+												itemValue="ENSINO MEDIO" />
+											<f:selectItem itemLabel="Ensino Superior Incompleto"
+												itemValue="ENSINO SUPERIOR INCOMPLETO" />
+											<f:selectItem itemLabel="Ensino Superior"
+												itemValue="ENSINO SUPERIOR" />
+										</p:selectOneMenu>
+									</div>
+									<div class="ui-g-2">
+										<h:panelGrid columns="2" style="margin-bottom:10px"
+											cellpadding="5">
+											<p:outputLabel for="hrnMilitares" value="Honras Militares" />
+											<br />
+											<p:selectOneRadio id="hrnMilitares"
+												value="#{cadPessoaMB.pessoa.honrasMilitares}" layout="grid"
+												columns="2">
+												<f:selectItem itemLabel="SIM" itemValue="SIM" />
+												<f:selectItem itemLabel="NÃO" itemValue="NAO" />
+											</p:selectOneRadio>
+										</h:panelGrid>
+									</div>
+
+								</div>
+								<div class="ui-g">
+									<div class="ui-g-2">
+										<h:outputLabel value="Religião" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.religiao}" size="15" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Cor ou Raça" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.tpCor}" size="15" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Cor Olhos" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.tpOlhos}" size="15" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Tipo Cabelo" />
+										<br />
+										<p:inputText value="#{cadPessoaMB.pessoa.tpCabelo}" size="15" />
+									</div>
+								</div>
+
+								<div class="ui-g">
+									<div class="ui-g-2">
+										<h:outputLabel value="Nº Camisa" />
+										<br />
+										<p:spinner id="number2" value="#{cadPessoaMB.pessoa.nrCamisa}" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Nº Calça" />
+										<br />
+										<p:spinner id="number3"
+											value="#{cadPessoaMB.pessoa.nrCintura}" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Nº Calçado" />
+										<br />
+										<p:spinner id="number4"
+											value="#{cadPessoaMB.pessoa.nrCalcado}" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Nº Cobertura" />
+										<br />
+										<p:spinner id="number5"
+											value="#{cadPessoaMB.pessoa.nrCobertura}" />
+									</div>
+									<div class="ui-g-2">
+										<h:outputLabel value="Nº Luva" />
+										<br />
+										<p:spinner id="number6" value="#{cadPessoaMB.pessoa.nrLuva}" />
+									</div>
+								</div>
+							</p:tab>
+						</p:tabView>
+						<br />
+						<div class="ui-g-2" style="width:10%">
+						<p:commandButton value="Salvar" action="#{cadPessoaMB.salvar()}" />
+						<p:commandButton value="Cancelar" action="#{cadPessoaMB.redireciona()}" />
+						</div>
+					</h:form>
+				</div>
+
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
